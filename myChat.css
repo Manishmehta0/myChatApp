@@ -1,0 +1,129 @@
+body {
+  font-family: Arial;
+  background: #FFFFFF;
+  margin: 0px;
+}
+
+.header {
+  overflow: hidden;
+  font-size: 15px;
+  background: white;
+  border: 1px solid #ccc;
+  text-align: center;
+  margin: auto;
+}
+
+.header a {
+    float: right;
+    padding: 19px 8px;
+    text-decoration: none;
+    font-size: 12px;
+	font-weight: bold;
+}
+	
+.header input[type=text] {
+    float: left;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 15px;
+}
+
+.msgLabel{
+	font-size: 20px;
+	font-weight: bold;
+	margin: auto;
+}
+
+.column {
+    float: left;
+}
+
+.left {
+    width: 25%;
+}
+
+.right {
+    width: 75%;
+	background-color: #F0F8FF;
+}
+
+.leftContainer {
+	border: 1px solid #dedede;
+    background-color: #FFFFFF;
+    padding: 10px;
+	border-collapse: collapse;
+}
+
+.leftContainer img {
+    float: left;
+    margin-right: 20px;
+    border-radius: 50%;
+	margin-top: 10px;
+}
+
+.leftContainer span {
+    font-size: 16px;
+	font-weight: bold;
+    margin-right: 15px;
+	
+}
+.leftContainer .marginT10{
+	margin-top: 10px;
+}
+
+.leftContainer .timeSpan{
+	float: right;
+    font-size: 14px;
+}
+
+.container {
+    padding: 10px;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+.container .rightSpanMsg{
+	border: 1px solid #dedede;
+	padding: 15px;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.container .rightFoaatSpanMsg {
+	border: 1px solid #dedede;
+	padding: 15px;
+	font-weight: bold;
+	font-size: 15px;
+	float: right;
+}
+
+.container::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.container img {
+    float: left;
+    max-width: 50px;
+    width: 100%;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+/* Style the right image */
+.container img.right {
+    float: right;
+    margin-left: 20px;
+    margin-right:0;
+}
+
+.time{
+	font-size: 11px;
+}
+
+.time-right {
+    float: right;
+    font-size: 11px;
+}
