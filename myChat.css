@@ -5,35 +5,52 @@ body {
 }
 
 .header {
+  display: flex;
   overflow: hidden;
   font-size: 15px;
   background: white;
-  border: 1px solid #ccc;
-  text-align: center;
-  margin: auto;
+  position: fixed; 
+  top: 0;
+  width: 100%;	
+}
+.header > div {
+  flex: 1; 
+}
+
+.centerDiv{
+	margin-top: 16px;
+    text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+	text-shadow: 0 0 0.8px #FF0000;
+	letter-spacing: 3px;
 }
 
 .header a {
     float: right;
     padding: 19px 8px;
+	padding-right: 25px;
     text-decoration: none;
     font-size: 12px;
 	font-weight: bold;
+	text-shadow: 0 0 2px #ADD8E6;
 }
 	
 .header input[type=text] {
     float: left;
     padding: 6px;
     border: none;
-    margin-top: 8px;
-    margin-right: 16px;
+    margin-top: 12px;
     font-size: 15px;
+	
 }
 
-.msgLabel{
-	font-size: 20px;
-	font-weight: bold;
-	margin: auto;
+.leftDiv{
+	padding-left: 50px;
+}
+
+.row{
+	margin-top: 52px;
 }
 
 .column {
@@ -112,7 +129,6 @@ body {
     border-radius: 50%;
 }
 
-/* Style the right image */
 .container img.right {
     float: right;
     margin-left: 20px;
