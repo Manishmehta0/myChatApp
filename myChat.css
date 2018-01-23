@@ -67,7 +67,7 @@ body {
 }
 
 .leftContainer {
-	border: 1px solid #dedede;
+	border-bottom: 1px solid #dedede;
     background-color: #FFFFFF;
     padding: 10px;
 	border-collapse: collapse;
