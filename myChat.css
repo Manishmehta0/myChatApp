@@ -143,3 +143,44 @@ body {
     float: right;
     font-size: 11px;
 }
+
+.footer{
+	display: flex;
+	position: fixed;
+    bottom: 0;
+    width: 72.5%;
+	padding: 15px;
+    background-color: #FFFFFF;
+	border: 1px solid #dedede;
+}
+
+.footer .footerRightDiv{
+  flex: 1; 
+}
+
+.footerRightDiv{
+	float: right;
+	text-align: right;
+	margin-top: 3px;
+    font-size: 15px;
+	font-weight: bold;
+	text-shadow: 0 0 2px #ADD8E6;
+}
+
+.footerLeftDiv{
+	width: 90%;
+}
+
+.footer a{
+	text-decoration: none;
+	margin-right: 15px;
+}
+
+.footer input[type=text] {
+    float: left;
+    border: none;
+	outline: none;
+    font-size: 18px;
+	font-weight: bold;
+	width: 100%;
+}
