@@ -11,7 +11,8 @@ body {
   background: white;
   position: fixed; 
   top: 0;
-  width: 100%;	
+  width: 100%;
+  border-bottom: 1px solid #dedede;	
 }
 .header > div {
   flex: 1; 
@@ -61,16 +62,18 @@ body {
     width: 25%;
 }
 
-.right {
+.row .right {
     width: 75%;
 	background-color: #F0F8FF;
 }
 
 .leftContainer {
 	border-bottom: 1px solid #dedede;
+	border-right: 1px solid #dedede;
     background-color: #FFFFFF;
     padding: 10px;
 	border-collapse: collapse;
+	height: 80px;
 }
 
 .leftContainer img {

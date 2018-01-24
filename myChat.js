@@ -9,7 +9,7 @@ $(document).ready(function(){
 			data = JSON.parse(data);
 			users = data;
 			$.each(data, function(index,item){
-				// setting each user
+				//setting each user
 				var user = getUser(item)
 				$('#myId').append(user);
 				
@@ -34,11 +34,26 @@ $(document).ready(function(){
 var users;
 
 function getUser(item){
+	var time = "";
+	var lastMsg = "";
+	if(item.messages.length != 0){
+		time = noOfdays(item.messages[0].created);
+		lastMsg = item.messages[item.messages.length-1].text;
+	}
+	
 	var blogpost = "<div class='leftContainer' id='user_" +item.id+ "' >" 
 	   + "<img src= '" + item.img + "' >"
-	   + "<p><span class='marginT10'>"+ item.user +"</span> <span class='timeSpan'>06:52pm</span></p>" 
-	   + "<p>Hi There...</p></div>";
+	   + "<p><span class='marginT10'>"+ item.user +"</span> <span class='timeSpan'>"+time+"</span></p>" 
+	   + "<p>"+lastMsg+"</p></div>";
 	return blogpost;
+}
+
+function noOfdays(time){
+	var oneDay = 24*60*60*1000;
+	var firstDate = new Date();
+	var secondDate = new Date(time);
+	var diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
+	return diffDays+" 	days";
 }
 	
 function getMessages(item){
@@ -52,8 +67,8 @@ function getMessages(item){
 				floatRight = "floatRight";
 			}
 			var userImg = getImage(msg.createdBy);
-			console.log(userImg);
-			messagesBlock = messagesBlock + getMessage(userImg, msg.text, msg.created, floatRight);
+			var time = formatAMPM(new Date(msg.created));
+			messagesBlock = messagesBlock + getMessage(userImg, msg.text, time, floatRight);
 		});
 	}
 	messagesBlock = messagesBlock + "</div>"
@@ -102,9 +117,7 @@ function bindUserMessageClickEvent(){
 			var msgBlockId = "messages_" + divId;
 			$("#"+msgBlockId).slideDown();
 		});
-		
 	});
-	
 }
 	
 function sendMessage(){
@@ -113,6 +126,18 @@ function sendMessage(){
 	if($.trim($('#newMsg').val()) == ""){
 		return;
 	}
-	$("div.messageBlock:visible").append(getMessage(getImage(0), $('#newMsg').val(), "12:12", "floatRight"));
+	var today = formatAMPM(new Date());
+	$("div.messageBlock:visible").append(getMessage(getImage(0), $('#newMsg').val(), today, "floatRight"));
 	$('#newMsg').val("");
+}
+
+function formatAMPM(date) {
+	var hours = date.getHours();
+	var minutes = date.getMinutes();
+	var ampm = hours >= 12 ? 'pm' : 'am';
+	hours = hours % 12;
+	hours = hours ? hours : 12; // the hour '0' should be '12'
+	minutes = minutes < 10 ? '0'+minutes : minutes;
+	var strTime = hours + ':' + minutes + ' ' + ampm;
+	return strTime;
 }
