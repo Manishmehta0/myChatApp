@@ -185,3 +185,6 @@ body {
 	font-weight: bold;
 	width: 100%;
 }
+.floatRight > img,  .floatRight > p {
+	float: right;
+}

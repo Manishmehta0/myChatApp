@@ -19,51 +19,15 @@
 
 	<div class="row">
 	  <div class="column left" id="myId">
-		
 	  </div>
 	  
-	  <div class="column right">
-		<div class="container">
-		  <img src="mypic1.jpg" alt="Avatar">
-		  <p><span class="rightSpanMsg">Hello. How are you today?</span></p> 
-		  <p><span class="time">11:00 am</span></p>
-		</div>
-
-		<div class="container">
-		  <img src="mypic1.jpg" alt="Avatar" class="right">
-		  <p><span class="rightFoaatSpanMsg">Hey! I'm fine. Thanks for asking!</span></p>
-		  <p><span class="time-right">11:01 am</span></p>
-		</div>
-
-		<div class="container">
-		  <img src="mypic1.jpg" alt="Avatar">
-		  <p><span class="rightSpanMsg">Sweet! So, what do you wanna do today?</span></p>
-		  <p><span class="time">11:02 am</span></p>
-		</div>
-
-		<div class="container">
-		  <img src="mypic1.jpg" alt="Avatar" class="right">
-		  <p><span class="rightFoaatSpanMsg">Nah, I dunno. Play soccer.. or learn more coding perhaps?</span></p>
-		  <p><span class="time-right">11:05 am</span></p>
-		</div>
-		
-		<div class="container">
-		  <img src="mypic1.jpg" alt="Avatar">
-		  <p><span class="rightSpanMsg">Okay! I will join you</span></p>
-		  <p><span class="time">11:06 am</span></p>
-		</div>
-		
-		<div class="container">
-		  <img src="mypic1.jpg" alt="Avatar" class="right">
-		  <p><span class="rightFoaatSpanMsg">Okay, Cool</span></p>
-		  <p><span class="time-right">11:07 am</span></p>
-		</div>
-		
+	  <div class="column right" id="messages">
 		<div class="footer">
-		  <div class="footerLeftDiv"><input class="fa fa-search" type="text" placeholder="|"></div>
-		  <div class="footerRightDiv"><a href="#contact">SEND</a></div>
+			<div class="footerLeftDiv"><input class="fa fa-search" id="newMsg" type="text" placeholder="|"></div>
+			<div class="footerRightDiv" onclick="sendMessage()"><a href="#contact">SEND</a></div>
 		</div>
 	  </div>
+	  
 	</div>
   </body>
  </html>
