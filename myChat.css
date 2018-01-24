@@ -74,6 +74,7 @@ body {
 }
 
 .leftContainer img {
+	height: 60px;
     float: left;
     margin-right: 20px;
     border-radius: 50%;
