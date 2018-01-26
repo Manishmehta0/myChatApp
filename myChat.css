@@ -13,6 +13,7 @@ body {
   top: 0;
   width: 100%;
   border-bottom: 1px solid #dedede;	
+  text-shadow: 0 0 0.8px #FF0000;
 }
 .header > div {
   flex: 1; 
@@ -106,17 +107,10 @@ body {
 }
 .container .rightSpanMsg{
 	border: 1px solid #dedede;
-	padding: 15px;
 	font-weight: bold;
-	font-size: 15px;
-}
-
-.container .rightFoaatSpanMsg {
-	border: 1px solid #dedede;
-	padding: 15px;
-	font-weight: bold;
-	font-size: 15px;
-	float: right;
+	font-size: 13px;
+	padding: 13px 10px;
+	margin-top: 3.5px;
 }
 
 .container::after {
@@ -128,19 +122,22 @@ body {
 .container img {
     float: left;
     max-width: 50px;
+	height: 46px;
     width: 100%;
     margin-right: 20px;
     border-radius: 50%;
 }
 
-.container img.right {
-    float: right;
-    margin-left: 20px;
-    margin-right:0;
+.imgMargin{
+	margin-left: 22px;
 }
 
-.time{
-	font-size: 11px;
+.timing{
+	color: #DCDCDC;
+    font-size: 11px;
+	font-weight: bold;
+    float: right;
+	margin-top: -10px;
 }
 
 .time-right {
@@ -188,6 +185,10 @@ body {
 	font-weight: bold;
 	width: 100%;
 }
-.floatRight > img,  .floatRight > p {
+.rightFloat > img,  .rightFloat > span {
 	float: right;
+}
+
+.leftFloat > span {
+	float: left;
 }

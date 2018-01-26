@@ -62,24 +62,26 @@ function getMessages(item){
 		$.each(item.messages, function(index, msg){
 			
 			console.log(msg); 
-			var floatRight = "";
+			var floatBlock = "";
 			if(msg.createdBy == 0){
-				floatRight = "floatRight";
+				floatBlock = "rightFloat";
+			}else{
+				floatBlock = "leftFloat"
 			}
 			var userImg = getImage(msg.createdBy);
 			var time = formatAMPM(new Date(msg.created));
-			messagesBlock = messagesBlock + getMessage(userImg, msg.text, time, floatRight);
+			messagesBlock = messagesBlock + getMessage(userImg, msg.text, time, floatBlock);
 		});
 	}
 	messagesBlock = messagesBlock + "</div>"
 	return messagesBlock;
 }
 	
-function getMessage(img, msg, time, floatRight){
-	return "<div class='container "+floatRight+"'>"
-		 + "<img src='"+ img +"' alt='Avatar'>"
-		 + "<p><span class='rightSpanMsg'>"+msg+"</span></p>"
-		 + "<p><span class='time'>"+time+"</span></p></div>";
+function getMessage(img, msg, time, floatBlock){
+	return "<div class='container "+floatBlock+"'>"
+		 + "<img src='"+ img +"' alt='Avatar' class='imgMargin'>"
+		 + "<span><p class='rightSpanMsg'>"+msg+"</p>"
+		 + "<p class='timing'>"+time+"</p></span></div>";
 }
 	
 function getImage(id){
@@ -127,7 +129,7 @@ function sendMessage(){
 		return;
 	}
 	var today = formatAMPM(new Date());
-	$("div.messageBlock:visible").append(getMessage(getImage(0), $('#newMsg').val(), today, "floatRight"));
+	$("div.messageBlock:visible").append(getMessage(getImage(0), $('#newMsg').val(), today, "rightFloat"));
 	$('#newMsg').val("");
 }
 
