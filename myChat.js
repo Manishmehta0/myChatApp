@@ -43,8 +43,8 @@ function getUser(item){
 	
 	var blogpost = "<div class='leftContainer' id='user_" +item.id+ "' >" 
 	   + "<img src= '" + item.img + "' >"
-	   + "<p><span class='marginT10'>"+ item.user +"</span> <span class='timeSpan'>"+time+"</span></p>" 
-	   + "<p>"+lastMsg+"</p></div>";
+	   + "<p class='marginT10'><span>"+ item.user +"</span> <span class='timeSpan'>"+time+"</span></p>" 
+	   + "<p class='msgContent'>"+lastMsg+"</p></div>";
 	return blogpost;
 }
 
@@ -63,24 +63,27 @@ function getMessages(item){
 			
 			console.log(msg); 
 			var floatBlock = "";
+			var msgBlock = "";
 			if(msg.createdBy == 0){
 				floatBlock = "rightFloat";
+				msgBlock = "msgColorRight";
 			}else{
-				floatBlock = "leftFloat"
+				floatBlock = "leftFloat";
+				msgBlock = "msgColorLeft";
 			}
 			var userImg = getImage(msg.createdBy);
 			var time = formatAMPM(new Date(msg.created));
-			messagesBlock = messagesBlock + getMessage(userImg, msg.text, time, floatBlock);
+			messagesBlock = messagesBlock + getMessage(userImg, msg.text, time, floatBlock, msgBlock);
 		});
 	}
 	messagesBlock = messagesBlock + "</div>"
 	return messagesBlock;
 }
 	
-function getMessage(img, msg, time, floatBlock){
+function getMessage(img, msg, time, floatBlock, msgBlock){
 	return "<div class='container "+floatBlock+"'>"
 		 + "<img src='"+ img +"' alt='Avatar' class='imgMargin'>"
-		 + "<span><p class='rightSpanMsg'>"+msg+"</p>"
+		 + "<span><p class='rightSpanMsg "+msgBlock+"'>"+msg+"</p>"
 		 + "<p class='timing'>"+time+"</p></span></div>";
 }
 	
@@ -129,7 +132,7 @@ function sendMessage(){
 		return;
 	}
 	var today = formatAMPM(new Date());
-	$("div.messageBlock:visible").append(getMessage(getImage(0), $('#newMsg').val(), today, "rightFloat"));
+	$("div.messageBlock:visible").append(getMessage(getImage(0), $('#newMsg').val(), today, "rightFloat", "msgColorRight"));
 	$('#newMsg').val("");
 }
 

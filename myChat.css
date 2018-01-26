@@ -63,9 +63,15 @@ body {
     width: 25%;
 }
 
-.row .right {
+.right {
     width: 75%;
 	background-color: #F0F8FF;
+	bottom: 0;
+	right: 0;
+	height:100%;
+    content:' ';
+	top: 53px;
+    position: absolute;  
 }
 
 .leftContainer {
@@ -74,30 +80,39 @@ body {
     background-color: #FFFFFF;
     padding: 10px;
 	border-collapse: collapse;
-	height: 80px;
+	height: 72px;
 }
 
 .leftContainer img {
-	height: 60px;
+	height: 50px;
     float: left;
     margin-right: 20px;
     border-radius: 50%;
 	margin-top: 10px;
+	margin-left: 10px;
 }
 
 .leftContainer span {
-    font-size: 16px;
+    font-size: 14px;
 	font-weight: bold;
     margin-right: 15px;
 	
 }
 .leftContainer .marginT10{
-	margin-top: 10px;
+	margin-top: 12px
 }
 
 .leftContainer .timeSpan{
 	float: right;
-    font-size: 14px;
+    font-size: 11px;
+	margin-top: 3px;
+    color: #00CED1;
+}
+.leftContainer p.msgContent{
+	font-size: 13px;
+    font-weight: bold;
+    color: #00CED1;
+	margin-top: -8px;
 }
 
 .container {
@@ -111,6 +126,14 @@ body {
 	font-size: 13px;
 	padding: 13px 10px;
 	margin-top: 3.5px;
+}
+
+.container > span p.msgColorLeft{
+	color: #8B0000;
+}
+
+.container > span p.msgColorRight{
+	color: #BA55D3;
 }
 
 .container::after {
@@ -133,7 +156,7 @@ body {
 }
 
 .timing{
-	color: #DCDCDC;
+	color: #00CED1;
     font-size: 11px;
 	font-weight: bold;
     float: right;
