@@ -41,11 +41,15 @@ function getUser(item){
 		lastMsg = item.messages[item.messages.length-1].text;
 	}
 	
-	var blogpost = "<div class='leftContainer' id='user_" +item.id+ "' >" 
+	var blogpost = "<div class='leftContainer' id='user_" +item.id+ "'>" 
 	   + "<img src= '" + item.img + "' >"
-	   + "<p class='marginT10'><span>"+ item.user +"</span> <span class='timeSpan'>"+time+"</span></p>" 
+	   + "<p class='marginT10'><span class='whiteColor' id='nameSpan'>"+ item.user +"</span> <span class='timeSpan'>"+time+"</span></p>" 
 	   + "<p class='msgContent'>"+lastMsg+"</p></div>";
 	return blogpost;
+}
+
+function changeColor(){
+	$("div.leftContainer").css("background-color", "yellow");
 }
 
 function noOfdays(time){
@@ -92,7 +96,6 @@ function getImage(id){
 	console.log("user id " + id);
 	var imgSrc = "";;
 	//In case of current user, 0 indiates current user
-	
 	if(id == 0){
 		imgSrc = "mypic1.jpg";
 	}
@@ -117,8 +120,12 @@ function bindUserMessageClickEvent(){
 			
 			//close all messages block before open current block
 			$("#messages").find("div.messageBlock").slideUp();
-			
+			$("div.leftContainer").removeClass('selected');
+			$(".leftContainer > p span").removeClass('whiteColor');
 			var divId = $(curDiv).attr("id");
+			
+			$("#"+divId).addClass('selected');
+			$("#"+divId+"> p > span").addClass('whiteColor');
 			var msgBlockId = "messages_" + divId;
 			$("#"+msgBlockId).slideDown();
 		});

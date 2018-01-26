@@ -71,7 +71,7 @@ body {
 	height:100%;
     content:' ';
 	top: 53px;
-    position: absolute;  
+    position: absolute;
 }
 
 .leftContainer {
@@ -113,6 +113,19 @@ body {
     font-weight: bold;
     color: #00CED1;
 	margin-top: -8px;
+}
+
+.leftContainer > p span.whiteColor{
+	color: #FFFAF0;
+}
+
+.leftContainer.selected{
+	background-color: #1E90FF;
+	box-shadow: 0 8px 46px -15px black;
+	width: 97%;
+    position: sticky;
+    z-index: 1;
+	border-radius: 0px 7px 7px 0px;
 }
 
 .container {
