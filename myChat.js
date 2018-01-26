@@ -68,26 +68,30 @@ function getMessages(item){
 			console.log(msg); 
 			var floatBlock = "";
 			var msgBlock = "";
+			var arrow = "";
 			if(msg.createdBy == 0){
 				floatBlock = "rightFloat";
 				msgBlock = "msgColorRight";
+				arrow = "right_arrow_box";
 			}else{
 				floatBlock = "leftFloat";
 				msgBlock = "msgColorLeft";
+				arrow = "arrow_box";
 			}
 			var userImg = getImage(msg.createdBy);
 			var time = formatAMPM(new Date(msg.created));
-			messagesBlock = messagesBlock + getMessage(userImg, msg.text, time, floatBlock, msgBlock);
+			messagesBlock = messagesBlock + getMessage(userImg, msg.text, time, floatBlock, msgBlock, arrow);
 		});
 	}
 	messagesBlock = messagesBlock + "</div>"
 	return messagesBlock;
 }
 	
-function getMessage(img, msg, time, floatBlock, msgBlock){
+function getMessage(img, msg, time, floatBlock, msgBlock, arrow){
 	return "<div class='container "+floatBlock+"'>"
 		 + "<img src='"+ img +"' alt='Avatar' class='imgMargin'>"
 		 + "<span><p class='rightSpanMsg "+msgBlock+"'>"+msg+"</p>"
+		 + "<span><div class="+arrow+"></div><span>"
 		 + "<p class='timing'>"+time+"</p></span></div>";
 }
 	
@@ -139,7 +143,7 @@ function sendMessage(){
 		return;
 	}
 	var today = formatAMPM(new Date());
-	$("div.messageBlock:visible").append(getMessage(getImage(0), $('#newMsg').val(), today, "rightFloat", "msgColorRight"));
+	$("div.messageBlock:visible").append(getMessage(getImage(0), $('#newMsg').val(), today, "rightFloat", "msgColorRight", "right_arrow_box"));
 	$('#newMsg').val("");
 }
 

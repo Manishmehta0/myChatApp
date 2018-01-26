@@ -71,7 +71,7 @@ body {
 	height:100%;
     content:' ';
 	top: 53px;
-    position: absolute;
+    position: fixed;
 }
 
 .leftContainer {
@@ -119,6 +119,60 @@ body {
 	color: #FFFAF0;
 }
 
+.right_arrow_box {
+	position: relative;
+	background: #88b7d5;
+}
+.right_arrow_box:after, .right_arrow_box:before {
+	left: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.right_arrow_box:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-left-color: #40E0D0;
+	border-width: 9px;
+    margin-top: -31px;
+}
+.right_arrow_box:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-width: 36px;
+	margin-top: -36px;
+}
+
+.arrow_box {
+	position: relative;
+	background: #88b7d5;
+}
+.arrow_box:after, .arrow_box:before {
+	right: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow_box:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-right-color: #40E0D0;
+	border-width: 9px;
+    margin-top: -31px;
+}
+.arrow_box:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-width: 36px;
+	margin-top: -36px;
+}
+
 .leftContainer.selected{
 	background-color: #1E90FF;
 	box-shadow: 0 8px 46px -15px black;
@@ -143,10 +197,12 @@ body {
 
 .container > span p.msgColorLeft{
 	color: #8B0000;
+	background: #40E0D0;
 }
 
 .container > span p.msgColorRight{
 	color: #BA55D3;
+	background: #40E0D0;
 }
 
 .container::after {
